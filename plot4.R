@@ -18,7 +18,7 @@ data<-read.table("./ExData_Plotting1/household_power_consumption.txt", header=TR
 data$DateD<-as.Date(data$Date, format="%d/%m/%Y")
 data <- filter(data, DateD >= as.Date("2007-02-01"), DateD < as.Date("2007-02-03"))
 data$DateTime<-strptime(paste(data$Date, data$Time), format="%d/%m/%Y %H:%M:%S")
-png(file = "./ExData_Plotting1/plot4.png", width=480, height=480)  
+png(file = "./ExData_Plotting1/plot4.png", width=480, height=480, bg = "transparent")  
 par(mfrow=c(2,2))
 # plot 1
 plot(data$DateTime, data$Global_active_power, type = "l", ylab = "Global Active Power", xlab="")
